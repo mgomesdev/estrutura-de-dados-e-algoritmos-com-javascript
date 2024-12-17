@@ -1,5 +1,14 @@
+import LinkedList from "../../src/06-listas-ligadas/LinkedList";
+
 describe("Criando a classe LinkedList", () => {
-   it.todo("push(element): adiciona um novo elemento no final da lista.");
+   it("push(element): adiciona um novo elemento no final da lista.", () => {
+      const linkedList = new LinkedList();
+
+      linkedList.push(15);
+      linkedList.push(10);
+
+      expect(linkedList.count).toBe(2);
+   });
 
    it.todo("insert(element, position): insere um novo elemento em uma posição específica da lista.");
 
