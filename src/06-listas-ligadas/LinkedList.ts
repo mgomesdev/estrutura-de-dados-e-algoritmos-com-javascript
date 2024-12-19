@@ -109,6 +109,24 @@ class LinkedList {
    isEmpty() {
       return this.size() === 0;
    }
+
+   getHead() {
+      return this.head;
+   }
+
+   toString() {
+      if (this.head === null) return "";
+
+      let objString = `${this.head?.element}`;
+      let current = this.head?.next;
+
+      for (let i = 1; i < this.size() && current !== null; i++) {
+         objString = `${objString},${current?.element}`;
+         current = current?.next;
+      }
+
+      return objString;
+   }
 }
 
 export default LinkedList;

@@ -79,12 +79,10 @@ describe("Criando a classe LinkedList", () => {
       it("devolve true se a lista ligada não contiver nenhum elemento.", () => {
          const linkedList = new LinkedList();
 
-         linkedList.push(15);
-
-         expect(linkedList.size()).toBe(1);
+         expect(linkedList.isEmpty()).toBeTruthy();
       });
 
-      it.only("devolve false se o tamanho da lista ligada for maior que 0.", () => {
+      it("devolve false se o tamanho da lista ligada for maior que 0.", () => {
          const linkedList = new LinkedList();
 
          linkedList.push(19);
@@ -93,7 +91,30 @@ describe("Criando a classe LinkedList", () => {
       });
    });
 
-   it.todo("size(): devolve o número de elementos contidos na lista ligada.");
+   it("size(): devolve o número de elementos contidos na lista ligada.", () => {
+      const linkedList = new LinkedList();
 
-   it.todo("toString(): devolve uma representação em string da lista ligada.");
+      linkedList.push(10);
+      linkedList.push(20);
+
+      expect(linkedList.size()).toBe(2);
+   });
+
+   it("getHead: devolve o head da lista ligada", () => {
+      const linkedList = new LinkedList();
+
+      linkedList.push(10);
+      linkedList.push(20);
+
+      expect(linkedList.getHead()?.element).toBe(10);
+   });
+
+   it("toString(): devolve uma representação em string da lista ligada.", () => {
+      const linkedList = new LinkedList();
+
+      linkedList.push(10);
+      linkedList.push(20);
+
+      expect(linkedList.toString()).toBe("10,20");
+   });
 });
