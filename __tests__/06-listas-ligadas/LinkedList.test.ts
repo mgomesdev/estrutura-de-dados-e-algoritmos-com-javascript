@@ -21,12 +21,19 @@ describe("Criando a classe LinkedList", () => {
       expect(linkedList.count).toBe(1);
    });
 
-   it.todo("insert(element, position): insere um novo elemento em uma posição específica da lista.");
-
    describe("getElementAt(index): devolve o elemento que está em uma posição específica da lista. Se o elemento não estiver na lista, undefined será devolvido.", () => {
-      it.todo("devolve o elemento que está em uma posição específica da lista.");
+      it.only("devolve o elemento que está em uma posição específica da lista.", () => {
+         const linkedList = new LinkedList();
+
+         linkedList.push(15);
+         linkedList.push(10);
+
+         expect(linkedList.getElementAt(1)?.element).toBe(10);
+      });
       it.todo("dSe o elemento não estiver na lista, undefined será devolvido.");
    });
+
+   it.todo("insert(element, position): insere um novo elemento em uma posição específica da lista.");
 
    it.todo("remove(element): remove um elemento da lista.");
 
