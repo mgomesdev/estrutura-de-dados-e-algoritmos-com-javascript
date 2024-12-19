@@ -84,6 +84,18 @@ class LinkedList {
          return true;
       }
    }
+
+   indexOf(element: number) {
+      let current = this.head;
+
+      for (let i = 0; i < this.count && current !== null; i++) {
+         if (this.equalsFn(element, current?.element)) return i;
+
+         current = current?.next;
+      }
+
+      return -1;
+   }
 }
 
 export default LinkedList;
