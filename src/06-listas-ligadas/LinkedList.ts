@@ -101,6 +101,10 @@ class LinkedList {
 
       return -1;
    }
+
+   size() {
+      return this.count;
+   }
 }
 
 export default LinkedList;
