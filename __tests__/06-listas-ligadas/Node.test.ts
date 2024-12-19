@@ -8,12 +8,12 @@ describe("LinkedList: -> Node: Classe auxiliar para representar a cabeça (head)
 
    it("Deve retornar o element do node", () => {
       const node = new Node(12);
-      expect(node.getElement()).toBe(12);
+      expect(node.element).toBe(12);
    });
 
    it("Deve retornar o next do node", () => {
       const node = new Node(12);
 
-      expect(node.getNext()).toBe(undefined);
+      expect(node.next).toBe(undefined);
    });
 });

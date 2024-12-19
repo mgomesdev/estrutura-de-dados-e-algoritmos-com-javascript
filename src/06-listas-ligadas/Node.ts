@@ -7,15 +7,15 @@ class Node<T> {
       this._next = undefined;
    }
 
-   getElement() {
+   get element() {
       return this._element;
    }
 
-   getNext() {
+   get next() {
       return this._next;
    }
 
-   setNext(next: Node<T> | undefined) {
+   set next(next: Node<T> | undefined) {
       this._next = next;
    }
 }

@@ -28,7 +28,7 @@ describe("Criando a classe LinkedList", () => {
          linkedList.push(15);
          linkedList.push(10);
 
-         expect(linkedList.getElementAt(1)?.getElement()).toBe(10);
+         expect(linkedList.getElementAt(1)?.element).toBe(10);
       });
 
       it("Se o elemento não estiver na lista, undefined será devolvido.", () => {
@@ -37,7 +37,7 @@ describe("Criando a classe LinkedList", () => {
          linkedList.push(15);
          linkedList.push(10);
 
-         expect(linkedList.getElementAt(2)?.getElement()).toBe(undefined);
+         expect(linkedList.getElementAt(2)?.element).toBe(undefined);
       });
    });
 
@@ -49,7 +49,7 @@ describe("Criando a classe LinkedList", () => {
 
       linkedList.insert(20, 1);
 
-      expect(linkedList.getElementAt(1)?.getElement()).toBe(20);
+      expect(linkedList.getElementAt(1)?.element).toBe(20);
    });
 
    describe("indexOf(element): devolve o índice do elemento na lista. Se o elemento não estiver na lista, -1 será devolvido.", () => {
@@ -114,7 +114,7 @@ describe("Criando a classe LinkedList", () => {
       linkedList.push(10);
       linkedList.push(20);
 
-      expect(linkedList.getHead()?.getElement()).toBe(10);
+      expect(linkedList.getHead()?.element).toBe(10);
    });
 
    it("toString(): devolve uma representação em string da lista ligada.", () => {
