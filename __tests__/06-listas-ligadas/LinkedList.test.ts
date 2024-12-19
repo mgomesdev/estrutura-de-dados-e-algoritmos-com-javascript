@@ -53,7 +53,7 @@ describe("Criando a classe LinkedList", () => {
    });
 
    describe("indexOf(element): devolve o índice do elemento na lista. Se o elemento não estiver na lista, -1 será devolvido.", () => {
-      it.only("devolve o índice do elemento na lista.", () => {
+      it("devolve o índice do elemento na lista.", () => {
          const linkedList = new LinkedList();
 
          linkedList.push(15);
@@ -64,7 +64,16 @@ describe("Criando a classe LinkedList", () => {
       it.todo("Se o elemento não estiver na lista, -1 será devolvido.");
    });
 
-   it.todo("remove(element): remove um elemento da lista.");
+   it.only("remove(element): remove um elemento da lista.", () => {
+      const linkedList = new LinkedList();
+
+      linkedList.push(15);
+      linkedList.push(10);
+
+      linkedList.remove(10);
+
+      expect(linkedList.count).toBe(1);
+   });
 
    describe("isEmpty(): devolve true se a lista ligada não contiver nenhum elemento, e false se o tamanho da lista ligada for maior que 0.", () => {
       it.todo("devolve true se a lista ligada não contiver nenhum elemento.");

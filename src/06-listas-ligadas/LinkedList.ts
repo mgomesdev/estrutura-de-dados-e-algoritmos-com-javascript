@@ -51,6 +51,11 @@ class LinkedList {
       return undefined;
    }
 
+   remove(element: number) {
+      const index = this.indexOf(element);
+      return this.removeAt(index);
+   }
+
    getElementAt(index: number) {
       if (index >= 0 && index <= this.count) {
          let node = this.head;
