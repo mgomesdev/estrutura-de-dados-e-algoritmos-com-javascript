@@ -22,11 +22,11 @@ class LinkedList {
       } else {
          current = this.head;
 
-         while (current.next !== undefined) {
-            current = current.next;
+         while (current?.getNext() !== undefined) {
+            current = current?.getNext();
          }
 
-         current.next = node;
+         current?.setNext(node);
       }
 
       this.count++;
@@ -37,15 +37,15 @@ class LinkedList {
          let current = this.head;
 
          if (index === 0) {
-            this.head = current?.next;
+            this.head = current?.getNext();
          } else {
             const previous = this.getElementAt(index - 1);
-            current = previous?.next;
-            previous!.next = current?.next;
+            current = previous?.getNext();
+            previous!.setNext(current?.getNext());
          }
 
          this.count--;
-         return current?.element;
+         return current?.getElement();
       }
 
       return undefined;
@@ -61,7 +61,7 @@ class LinkedList {
          let node = this.head;
 
          for (let i = 0; i < index && node !== null; i++) {
-            node = node?.next;
+            node = node?.getNext();
          }
 
          return node;
@@ -76,13 +76,13 @@ class LinkedList {
 
          if (index === 0) {
             const current = this.head;
-            node.next = current;
+            node.setNext(current);
             this.head = node;
          } else {
             const previous = this.getElementAt(index - 1);
-            const current = previous?.next;
-            node.next = current;
-            previous!.next = node;
+            const current = previous?.getNext();
+            node.setNext(current);
+            previous?.setNext(node);
          }
 
          this.count++;
@@ -94,9 +94,9 @@ class LinkedList {
       let current = this.head;
 
       for (let i = 0; i < this.count && current !== null; i++) {
-         if (this.equalsFn(element, current?.element)) return i;
+         if (this.equalsFn(element, current?.getElement())) return i;
 
-         current = current?.next;
+         current = current?.getNext();
       }
 
       return -1;
@@ -117,12 +117,12 @@ class LinkedList {
    toString() {
       if (this.head === null) return "";
 
-      let objString = `${this.head?.element}`;
-      let current = this.head?.next;
+      let objString = `${this.head?.getElement()}`;
+      let current = this.head?.getNext();
 
       for (let i = 1; i < this.size() && current !== null; i++) {
-         objString = `${objString},${current?.element}`;
-         current = current?.next;
+         objString = `${objString},${current?.getElement()}`;
+         current = current?.getNext();
       }
 
       return objString;
