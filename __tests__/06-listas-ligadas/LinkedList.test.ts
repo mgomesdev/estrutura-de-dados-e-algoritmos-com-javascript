@@ -7,7 +7,7 @@ describe("Criando a classe LinkedList", () => {
       linkedList.push(15);
       linkedList.push(10);
 
-      expect(linkedList.count).toBe(2);
+      expect(linkedList.size()).toBe(2);
    });
 
    it("removeAt(position): remove um item de uma posição especifica da lista.", () => {
@@ -18,7 +18,7 @@ describe("Criando a classe LinkedList", () => {
 
       linkedList.removeAt(1);
 
-      expect(linkedList.count).toBe(1);
+      expect(linkedList.size()).toBe(1);
    });
 
    describe("getElementAt(index): devolve o elemento que está em uma posição específica da lista. Se o elemento não estiver na lista, undefined será devolvido.", () => {
@@ -72,7 +72,7 @@ describe("Criando a classe LinkedList", () => {
 
       linkedList.remove(10);
 
-      expect(linkedList.count).toBe(1);
+      expect(linkedList.size()).toBe(1);
    });
 
    describe("isEmpty(): devolve true se a lista ligada não contiver nenhum elemento, e false se o tamanho da lista ligada for maior que 0.", () => {

@@ -3,8 +3,8 @@ import Node from "./Node";
 const defaultEquals = <T>(a: T, b: T) => a === b;
 
 class LinkedList {
-   public count: number;
-   public head: Node<number> | undefined;
+   private count: number;
+   private head: Node<number> | undefined;
    private equalsFn: typeof defaultEquals;
 
    constructor(equalsFn = defaultEquals) {
