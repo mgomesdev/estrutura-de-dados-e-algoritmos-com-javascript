@@ -1,10 +1,14 @@
 class Node<T> {
-   public element: T;
-   public next: Node<T> | undefined;
+   private element: T;
+   private next: Node<T> | undefined;
 
    constructor(element: T) {
       this.element = element;
       this.next = undefined;
+   }
+
+   getElement() {
+      return this.element;
    }
 }
 
