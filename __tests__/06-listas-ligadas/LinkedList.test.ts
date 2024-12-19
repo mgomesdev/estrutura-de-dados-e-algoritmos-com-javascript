@@ -61,7 +61,15 @@ describe("Criando a classe LinkedList", () => {
 
          expect(linkedList.indexOf(10)).toBe(1);
       });
-      it.todo("Se o elemento não estiver na lista, -1 será devolvido.");
+
+      it("Se o elemento não estiver na lista, -1 será devolvido.", () => {
+         const linkedList = new LinkedList();
+
+         linkedList.push(15);
+         linkedList.push(10);
+
+         expect(linkedList.indexOf(12)).toBe(-1);
+      });
    });
 
    it("remove(element): remove um elemento da lista.", () => {
