@@ -2,9 +2,9 @@ class Node<T> {
    private _element: T;
    private _next: Node<T> | undefined;
 
-   constructor(element: T) {
+   constructor(element: T, next: Node<T> | undefined = undefined) {
       this._element = element;
-      this._next = undefined;
+      this._next = next;
    }
 
    get element() {

@@ -1,6 +1,6 @@
 import Node from "./Node";
 
-const defaultEquals = <T>(a: T, b: T) => a === b;
+export const defaultEquals = <T>(a: T, b: T) => a === b;
 
 class LinkedList {
    private count: number;
