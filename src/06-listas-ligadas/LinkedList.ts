@@ -1,26 +1,27 @@
+import DoublyNode from "./DoublyNode";
 import Node from "./Node";
 
 export const defaultEquals = <T>(a: T, b: T) => a === b;
 
 class LinkedList {
-   private count: number;
-   private head: Node<number> | undefined;
-   private equalsFn: typeof defaultEquals;
+   protected _count: number;
+   protected _head: Node<number | unknown> | undefined;
+   private _equalsFn: typeof defaultEquals;
 
    constructor(equalsFn = defaultEquals) {
-      this.count = 0;
-      this.head = undefined;
-      this.equalsFn = equalsFn;
+      this._count = 0;
+      this._head = undefined;
+      this._equalsFn = equalsFn;
    }
 
    push(element: number) {
       const node = new Node(element);
-      let current: Node<number> | undefined;
+      let current: Node<number | unknown> | undefined;
 
-      if (this.head === undefined) {
-         this.head = node;
+      if (this._head === undefined) {
+         this._head = node;
       } else {
-         current = this.head;
+         current = this._head;
 
          while (current?.next !== undefined) {
             current = current?.next;
@@ -29,22 +30,22 @@ class LinkedList {
          current.next = node;
       }
 
-      this.count++;
+      this._count++;
    }
 
    removeAt(index: number) {
-      if (index >= 0 && index < this.count) {
-         let current = this.head;
+      if (index >= 0 && index < this._count) {
+         let current = this._head;
 
          if (index === 0) {
-            this.head = current?.next;
+            this._head = current?.next;
          } else {
             const previous = this.getElementAt(index - 1);
             current = previous?.next;
             previous!.next = current?.next;
          }
 
-         this.count--;
+         this._count--;
          return current?.element;
       }
 
@@ -57,8 +58,8 @@ class LinkedList {
    }
 
    getElementAt(index: number) {
-      if (index >= 0 && index <= this.count) {
-         let node = this.head;
+      if (index >= 0 && index <= this._count) {
+         let node = this._head;
 
          for (let i = 0; i < index && node !== null; i++) {
             node = node?.next;
@@ -70,31 +71,31 @@ class LinkedList {
       return undefined;
    }
 
-   insert(element: number, index: number) {
-      if (index >= 0 && index <= this.count) {
+   insert(element: number, index: number): boolean | undefined {
+      if (index >= 0 && index <= this._count) {
          const node = new Node(element);
 
          if (index === 0) {
-            const current = this.head;
-            node.next = current;
-            this.head = node;
+            const current = this._head;
+            node.next = current as Node<number>;
+            this._head = node;
          } else {
             const previous = this.getElementAt(index - 1);
             const current = previous?.next;
-            node.next = current;
+            node.next = current as Node<number>;
             previous!.next = node;
          }
 
-         this.count++;
+         this._count++;
          return true;
       }
    }
 
    indexOf(element: number) {
-      let current = this.head;
+      let current = this._head;
 
-      for (let i = 0; i < this.count && current !== null; i++) {
-         if (this.equalsFn(element, current?.element)) return i;
+      for (let i = 0; i < this._count && current !== null; i++) {
+         if (this._equalsFn(element, current?.element)) return i;
 
          current = current?.next;
       }
@@ -103,7 +104,7 @@ class LinkedList {
    }
 
    size() {
-      return this.count;
+      return this._count;
    }
 
    isEmpty() {
@@ -111,14 +112,14 @@ class LinkedList {
    }
 
    getHead() {
-      return this.head;
+      return this._head;
    }
 
    toString() {
-      if (this.head === null) return "";
+      if (this._head === null) return "";
 
-      let objString = `${this.head?.element}`;
-      let current = this.head?.next;
+      let objString = `${this._head?.element}`;
+      let current = this._head?.next;
 
       for (let i = 1; i < this.size() && current !== null; i++) {
          objString = `${objString},${current?.element}`;
