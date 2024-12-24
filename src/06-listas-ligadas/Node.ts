@@ -1,6 +1,6 @@
 class Node<T> {
-   private _element: T;
-   private _next: Node<T> | undefined;
+   protected _element: T;
+   protected _next: Node<T> | undefined;
 
    constructor(element: T, next: Node<T> | undefined = undefined) {
       this._element = element;

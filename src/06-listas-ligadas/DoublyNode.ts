@@ -1,13 +1,10 @@
 import Node from "./Node";
 
-class DoublyNode<T> {
-   private _element: T;
-   private _next: DoublyNode<T> | undefined;
+class DoublyNode<T> extends Node<T> {
    private _prev: DoublyNode<T> | undefined;
 
    constructor(element: T, next: DoublyNode<T> | undefined, prev: DoublyNode<T> | undefined) {
-      this._element = element;
-      this._next = next;
+      super(element, next);
       this._prev = prev;
    }
 
@@ -16,7 +13,7 @@ class DoublyNode<T> {
    }
 
    get next() {
-      return this._next;
+      return this._next as DoublyNode<T>;
    }
 
    set prev(element: DoublyNode<T> | undefined) {

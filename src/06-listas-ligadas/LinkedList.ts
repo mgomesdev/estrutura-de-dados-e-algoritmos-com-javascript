@@ -14,7 +14,7 @@ class LinkedList {
       this._equalsFn = equalsFn;
    }
 
-   push(element: number) {
+   push(element: number | unknown) {
       const node = new Node(element);
       let current: Node<number | unknown> | undefined;
 
@@ -57,7 +57,7 @@ class LinkedList {
       return this.removeAt(index);
    }
 
-   getElementAt(index: number) {
+   getElementAt(index: number): Node<unknown> | undefined | DoublyNode<unknown> {
       if (index >= 0 && index <= this._count) {
          let node = this._head;
 
@@ -71,7 +71,7 @@ class LinkedList {
       return undefined;
    }
 
-   insert(element: number, index: number): boolean | undefined {
+   insert(element: number | unknown, index: number): boolean | undefined {
       if (index >= 0 && index <= this._count) {
          const node = new Node(element);
 

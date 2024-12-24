@@ -1,20 +1,16 @@
 import DoublyNode from "./DoublyNode";
-import { defaultEquals } from "./LinkedList";
+import LinkedList, { defaultEquals } from "./LinkedList";
 
-class DoublyLinkedList<T> {
-   private _head: DoublyNode<T> | undefined;
+class DoublyLinkedList<T> extends LinkedList {
+   protected _head: DoublyNode<T> | undefined;
    private _tail: DoublyNode<T> | undefined;
-   private _count: number;
-   private _equalsFn: (a: T, b: T) => boolean;
 
    constructor(equalsFn = defaultEquals) {
-      this._head = undefined;
+      super(equalsFn);
       this._tail = undefined;
-      this._count = 0;
-      this._equalsFn = equalsFn;
    }
 
-   insert(element: T, index: number): boolean {
+   override insert(element: T, index: number) {
       if (index >= 0 && index <= this._count) {
          const node = new DoublyNode(element, undefined, undefined);
          let current = this._head as DoublyNode<T>;
@@ -48,7 +44,7 @@ class DoublyLinkedList<T> {
       return false;
    }
 
-   getElementAt(index: number): DoublyNode<T> | undefined {
+   override getElementAt(index: number) {
       if (index >= 0 && index < this._count) {
          let node = this._head;
          for (let i = 0; i < index && node !== undefined; i++) {

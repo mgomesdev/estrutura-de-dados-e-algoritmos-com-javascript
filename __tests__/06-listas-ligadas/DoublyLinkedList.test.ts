@@ -27,4 +27,13 @@ describe("DoublyLinkedList", () => {
          },
       });
    });
+
+   it.only("getElementAt(index:number): devolve o elemento que está em uma posição específica da lista. Se o elemento nao estiver na lista, undefined será devolvido.", () => {
+      const doublyLinkedList = new DoublyLinkedList();
+
+      doublyLinkedList.insert(20, 0);
+      doublyLinkedList.insert(40, 1);
+
+      expect(doublyLinkedList.getElementAt(1)?.element).toBe(40);
+   });
 });
