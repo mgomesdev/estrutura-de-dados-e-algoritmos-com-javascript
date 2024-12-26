@@ -25,7 +25,6 @@ describe("StackLinkedList", () => {
 
       stackLinkedList.push(10);
       stackLinkedList.push(20);
-
       stackLinkedList.pop();
 
       expect(stackLinkedList.size()).toBe(1);
