@@ -1,6 +1,6 @@
 import CircularLinkedList from "../../src/06-listas-ligadas/CircularLinkedList";
 
-describe("CircularLinekdList", () => {
+describe("CircularLinkedList", () => {
    it("Deve criar uma instancia de CircularLinkedList", () => {
       const circularLinkedList = new CircularLinkedList();
       expect(circularLinkedList).toBeInstanceOf(CircularLinkedList);
