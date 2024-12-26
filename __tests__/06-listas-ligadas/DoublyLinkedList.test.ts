@@ -36,4 +36,14 @@ describe("DoublyLinkedList", () => {
 
       expect(doublyLinkedList.getElementAt(1)?.element).toBe(40);
    });
+
+   it("removeAt(index): remove um item de uma posição específica da lista.", () => {
+      const doublyLinkedList = new DoublyLinkedList();
+
+      doublyLinkedList.insert(20, 0);
+      doublyLinkedList.insert(60, 1);
+      doublyLinkedList.removeAt(0);
+
+      expect(doublyLinkedList.getElementAt(0)?.element).toBe(60);
+   });
 });
