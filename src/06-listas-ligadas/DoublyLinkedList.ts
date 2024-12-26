@@ -70,7 +70,8 @@ class DoublyLinkedList<T> extends LinkedList {
          } else if (index === this._count - 1) {
             current = this._tail;
             this._tail = current?.prev;
-            this._tail!.next = undefined;
+
+            if (this._tail) this._tail.next = undefined;
          } else {
             current = this.getElementAt(index);
             const previous = current?.prev;

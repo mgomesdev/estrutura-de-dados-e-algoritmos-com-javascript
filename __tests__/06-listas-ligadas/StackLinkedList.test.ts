@@ -20,5 +20,14 @@ describe("StackLinkedList", () => {
       expect(stackLinkedList.size()).toBe(2);
    });
 
-   it("Deve remover dados da pilha", () => {});
+   it("Deve remover dados da pilha", () => {
+      const stackLinkedList = new StackLinkedList();
+
+      stackLinkedList.push(10);
+      stackLinkedList.push(20);
+
+      stackLinkedList.pop();
+
+      expect(stackLinkedList.size()).toBe(1);
+   });
 });
