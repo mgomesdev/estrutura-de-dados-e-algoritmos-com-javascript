@@ -1,8 +1,12 @@
 class Set {
-   private items: object;
+   private items: { [key: number]: number };
 
    constructor() {
       this.items = {};
+   }
+
+   hasElement(element: number) {
+      return Object.prototype.hasOwnProperty.call(this.items, element);
    }
 }
 

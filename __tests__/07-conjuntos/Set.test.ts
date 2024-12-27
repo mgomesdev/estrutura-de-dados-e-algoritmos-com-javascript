@@ -10,7 +10,10 @@ describe("Set: Conjuntos", () => {
 
    it.todo("delete(element): remove element do conjunto");
 
-   it.todo("has(element): devolve true se element estiver no conjunto, e false caso contrário.");
+   it("has(element): devolve true se element estiver no conjunto, e false caso contrário.", () => {
+      const set = new Set();
+      expect(set.hasElement(2)).toBeFalsy();
+   });
 
    it.todo("clear(): remove todos os elementos do conjunto");
 
