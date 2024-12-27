@@ -8,3 +8,4 @@ Utilizei TDD para fazer os exercícios e testar os exemplos do livro.
 -  [Cap. 4 - Pilhas](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/04-pilhas)
 -  [Cap. 5 - Filas e Deques](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/05-filas-e-deques)
 -  [Cap. 6 - Listas Ligadas](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/06-listas-ligadas)
+-  [Cap. 7 - Conjuntos](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/07-conjuntos)
