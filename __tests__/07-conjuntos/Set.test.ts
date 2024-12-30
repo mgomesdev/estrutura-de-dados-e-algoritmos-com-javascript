@@ -68,4 +68,31 @@ describe("Set: Conjuntos", () => {
 
       expect(set.values()).toEqual([3, 7, 12]);
    });
+
+   it("União: dados dois conjuntos, devolve um novo conjunto com elementos dos dois conjuntos especificados.", () => {
+      const setA = new Set();
+      setA.add(3);
+      setA.add(7);
+      setA.add(12);
+
+      const setB = new Set();
+      setB.add(3);
+      setB.add(7);
+      setB.add(12);
+
+      const union = setA.union(setB);
+
+      expect(union.size()).toBe(3);
+      expect(union.values()).toEqual([3, 7, 12]);
+   });
+
+   it.todo(
+      "Intersecção: dados dois conjuntos, devolve um novo conjunto com os elementos presentes em ambos os conjuntos."
+   );
+
+   it.todo(
+      "Diferença: dados dois conjuntos, devolve um novo conjunto com todos os elementos presentes no primeiro conjunto, mas não no segundo."
+   );
+
+   it.todo("Subconjuno: confirma se um dado conjunto é um subconjunto de outro.");
 });
