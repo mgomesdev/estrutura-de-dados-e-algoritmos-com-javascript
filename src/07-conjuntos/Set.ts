@@ -34,6 +34,10 @@ class Set {
    size() {
       return Object.keys(this.items).length;
    }
+
+   values() {
+      return Object.values(this.items);
+   }
 }
 
 export default Set;

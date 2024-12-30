@@ -30,11 +30,15 @@ describe("Set: Conjuntos", () => {
    describe("has(element): devolve true se element estiver no conjunto, e false caso contrário.", () => {
       const set = new Set();
 
+      set.add(3);
+
       it("Devolve false se não estiver no conjunto", () => {
          expect(set.hasElement(2)).toBeFalsy();
       });
 
-      it.todo("Devolve true se element estiver no conjunto");
+      it("Devolve true se element estiver no conjunto", () => {
+         expect(set.hasElement(3)).toBeTruthy();
+      });
    });
 
    it("clear(): remove todos os elementos do conjunto", () => {
@@ -55,5 +59,13 @@ describe("Set: Conjuntos", () => {
       expect(set.size()).toBe(2);
    });
 
-   it.todo("values(): devolve um array com todos os valores (elementos) que estão no conjunto.");
+   it("values(): devolve um array com todos os valores (elementos) que estão no conjunto.", () => {
+      const set = new Set();
+
+      set.add(3);
+      set.add(7);
+      set.add(12);
+
+      expect(set.values()).toEqual([3, 7, 12]);
+   });
 });
