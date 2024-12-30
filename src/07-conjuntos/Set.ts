@@ -48,6 +48,26 @@ class Set {
 
       return unionSet;
    }
+
+   intersection(otherSet: Set) {
+      const intersectionSet = new Set();
+      const otherValues = otherSet.values();
+      const values = this.values();
+
+      let smallerSet = otherValues;
+      let biggerSet = values;
+
+      if (otherValues.length - values.length) {
+         smallerSet = values;
+         biggerSet = otherValues;
+      }
+
+      smallerSet.forEach((value) => {
+         if (biggerSet.includes(value)) intersectionSet.add(value);
+      });
+
+      return intersectionSet;
+   }
 }
 
 export default Set;
