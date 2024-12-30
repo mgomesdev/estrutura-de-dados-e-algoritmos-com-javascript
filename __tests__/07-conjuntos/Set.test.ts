@@ -12,12 +12,20 @@ describe("Set: Conjuntos", () => {
       const add = set.add(7);
       const add2 = set.add(7);
 
-      expect(set.hasElement(7));
+      expect(set.hasElement(7)).toBeTruthy();
       expect(add).toBeTruthy();
       expect(add2).toBeFalsy();
    });
 
-   it.todo("delete(element): remove element do conjunto");
+   it("delete(element): remove element do conjunto", () => {
+      const set = new Set();
+
+      set.add(7);
+      set.add(8);
+      set.delete(7);
+
+      expect(set.hasElement(7)).toBeFalsy();
+   });
 
    describe("has(element): devolve true se element estiver no conjunto, e false caso contrário.", () => {
       const set = new Set();

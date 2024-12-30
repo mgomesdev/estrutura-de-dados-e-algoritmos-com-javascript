@@ -17,6 +17,15 @@ class Set {
 
       return false;
    }
+
+   delete(element: number) {
+      if (this.hasElement(element)) {
+         delete this.items[element];
+         return true;
+      }
+
+      return false;
+   }
 }
 
 export default Set;
