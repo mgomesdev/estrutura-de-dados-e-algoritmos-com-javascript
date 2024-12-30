@@ -8,6 +8,15 @@ class Set {
    hasElement(element: number) {
       return Object.prototype.hasOwnProperty.call(this.items, element);
    }
+
+   add(element: number) {
+      if (!this.hasElement(element)) {
+         this.items[element] = element;
+         return true;
+      }
+
+      return false;
+   }
 }
 
 export default Set;

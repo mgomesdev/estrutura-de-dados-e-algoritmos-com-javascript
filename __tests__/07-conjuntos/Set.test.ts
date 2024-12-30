@@ -6,7 +6,16 @@ describe("Set: Conjuntos", () => {
       expect(set).toBeInstanceOf(Set);
    });
 
-   it.todo("add(element): adiciona um novo element ao conjunto");
+   it("add(element): adiciona um novo element ao conjunto", () => {
+      const set = new Set();
+
+      const add = set.add(7);
+      const add2 = set.add(7);
+
+      expect(set.hasElement(7));
+      expect(add).toBeTruthy();
+      expect(add2).toBeFalsy();
+   });
 
    it.todo("delete(element): remove element do conjunto");
 
