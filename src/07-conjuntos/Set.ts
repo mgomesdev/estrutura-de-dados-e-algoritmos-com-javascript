@@ -77,6 +77,23 @@ class Set {
 
       return differenceSet;
    }
+
+   isSubsetOf(otherSet: Set) {
+      if (this.size() > otherSet.size()) return false;
+
+      let isSubset = true;
+
+      this.values().every((value) => {
+         if (!otherSet.hasElement(value)) {
+            isSubset = false;
+            return false;
+         }
+
+         return true;
+      });
+
+      return isSubset;
+   }
 }
 
 export default Set;

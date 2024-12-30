@@ -118,5 +118,18 @@ describe("Set: Conjuntos", () => {
       expect(difference.values()).toEqual([3, 7, 12]);
    });
 
-   it.todo("Subconjuno: confirma se um dado conjunto é um subconjunto de outro.");
+   it("Subconjuno: confirma se um dado conjunto é um subconjunto de outro.", () => {
+      const setA = new Set();
+      setA.add(1);
+      setA.add(2);
+
+      const setB = new Set();
+      setB.add(1);
+      setB.add(2);
+      setB.add(3);
+
+      const isSubsetOf = setA.isSubsetOf(setB);
+
+      expect(isSubsetOf).toBeTruthy();
+   });
 });
