@@ -103,9 +103,20 @@ describe("Set: Conjuntos", () => {
       expect(intersection.values()).toEqual([3, 7]);
    });
 
-   it.todo(
-      "Diferença: dados dois conjuntos, devolve um novo conjunto com todos os elementos presentes no primeiro conjunto, mas não no segundo."
-   );
+   it("Diferença: dados dois conjuntos, devolve um novo conjunto com todos os elementos presentes no primeiro conjunto, mas não no segundo.", () => {
+      const setA = new Set();
+      setA.add(3);
+      setA.add(7);
+      setA.add(12);
+
+      const setB = new Set();
+      setB.add(24);
+      setB.add(144);
+
+      const difference = setA.difference(setB);
+
+      expect(difference.values()).toEqual([3, 7, 12]);
+   });
 
    it.todo("Subconjuno: confirma se um dado conjunto é um subconjunto de outro.");
 });
