@@ -1,6 +1,8 @@
 ## Leitura do livro: Estrutura de Dados e Algorítmos com JavaScript - Loiane Groner
 
-Utilizei TDD para fazer os exercícios e testar os exemplos do livro.
+ Escreva um código JavaScript complexo e eficaz usando a mais recente ECMASCRIPT.
+
+> Utilizei TDD para fazer os exercícios e testar os exemplos do livro.
 
 -  [Cap. 1 - JavaScript - uma visão geral rápida](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/01-javascript-uma-visao-geral-rapida)
 -  [Cap. 2 - Visão Geral ECMAScript](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/02-visao-geral-ecmascript)
