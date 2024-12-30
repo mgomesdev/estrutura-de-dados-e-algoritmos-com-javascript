@@ -30,6 +30,10 @@ class Set {
    clear() {
       this.items = {};
    }
+
+   size() {
+      return Object.keys(this.items).length;
+   }
 }
 
 export default Set;

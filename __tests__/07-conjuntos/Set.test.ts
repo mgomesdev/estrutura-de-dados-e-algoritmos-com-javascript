@@ -46,9 +46,14 @@ describe("Set: Conjuntos", () => {
       expect(set.hasElement(7)).toBeFalsy();
    });
 
-   it.todo(
-      "size(): devolve quantos elementos estão contidos no conjunto. É semelhante á propriedade length de um array."
-   );
+   it("size(): devolve quantos elementos estão contidos no conjunto. É semelhante á propriedade length de um array.", () => {
+      const set = new Set();
+
+      set.add(7);
+      set.add(8);
+
+      expect(set.size()).toBe(2);
+   });
 
    it.todo("values(): devolve um array com todos os valores (elementos) que estão no conjunto.");
 });
