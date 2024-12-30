@@ -26,6 +26,10 @@ class Set {
 
       return false;
    }
+
+   clear() {
+      this.items = {};
+   }
 }
 
 export default Set;

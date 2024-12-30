@@ -37,7 +37,14 @@ describe("Set: Conjuntos", () => {
       it.todo("Devolve true se element estiver no conjunto");
    });
 
-   it.todo("clear(): remove todos os elementos do conjunto");
+   it("clear(): remove todos os elementos do conjunto", () => {
+      const set = new Set();
+
+      set.add(7);
+      set.clear();
+
+      expect(set.hasElement(7)).toBeFalsy();
+   });
 
    it.todo(
       "size(): devolve quantos elementos estão contidos no conjunto. É semelhante á propriedade length de um array."
