@@ -17,6 +17,16 @@ const setNative = {
 
       return intersectionSet;
    },
+
+   difference: (set1: Set<number>, set2: Set<number>) => {
+      const differenceSet = new Set();
+
+      set1.forEach((value) => {
+         if (!set2.has(value)) differenceSet.add(value);
+      });
+
+      return differenceSet;
+   },
 };
 
 export default setNative;

@@ -43,7 +43,21 @@ describe("ES6 - A classe Set", () => {
          expect(intersection).toEqual(new Set([2, 3]));
       });
 
-      it.todo("Simulando a operação de diferença");
+      it("Simulando a operação de diferença", () => {
+         const setA = new Set<number>();
+         setA.add(1);
+         setA.add(2);
+         setA.add(3);
+
+         const setB = new Set<number>();
+         setB.add(2);
+         setB.add(3);
+         setB.add(4);
+
+         const difference = setNative.difference(setA, setB);
+
+         expect(difference).toEqual(new Set([1]));
+      });
 
       it.todo("Usando o operador de espalhamento");
 
