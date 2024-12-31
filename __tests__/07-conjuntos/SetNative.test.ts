@@ -70,11 +70,8 @@ describe("ES6 - A classe Set", () => {
          setB.add(3);
          setB.add(4);
 
-         const intersection = new Set([...setA].filter((x) => setB.has(x)));
-         const difference = new Set([...setA].filter((x) => !setB.has(x)));
-
-         expect(intersection).toEqual(new Set([2, 3]));
-         expect(difference).toEqual(new Set([1]));
+         expect(setNative.intersectionSpread(setA, setB)).toEqual(new Set([2, 3]));
+         expect(setNative.differenceSpread(setA, setB)).toEqual(new Set([1]));
       });
    });
 });

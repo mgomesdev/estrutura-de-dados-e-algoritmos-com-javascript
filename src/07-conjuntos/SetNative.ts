@@ -18,6 +18,8 @@ const setNative = {
       return intersectionSet;
    },
 
+   intersectionSpread: (set1: Set<number>, set2: Set<number>) => new Set([...set1].filter((x) => set2.has(x))),
+
    difference: (set1: Set<number>, set2: Set<number>) => {
       const differenceSet = new Set();
 
@@ -27,6 +29,8 @@ const setNative = {
 
       return differenceSet;
    },
+
+   differenceSpread: (setA: Set<number>, setB: Set<number>) => new Set([...setA].filter((x) => !setB.has(x))),
 };
 
 export default setNative;
