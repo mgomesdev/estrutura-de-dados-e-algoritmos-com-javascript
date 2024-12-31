@@ -1,0 +1,31 @@
+describe("Dictionary", () => {
+   it.todo("Criando instancia da classe Dictionary");
+
+   it.todo(
+      "set(key, value: adiciona um novo elemento ao dicionário. Se key já existir, seu valor será sobrescrito com o novo valor."
+   );
+
+   it.todo("remove(key): remove value do dicionário usando key como o parâmetro de busca.");
+
+   it.todo("hasKey(key): devolve true se key estiver presente no dicionário, e false caso contrário.");
+
+   it.todo("get(key): devolve um value específico do dicionário usando key como o parâmetro de busca.");
+
+   it.todo("clear(): remove todos os valores do dicionário.");
+
+   it.todo(
+      "size(): devolve a quantidade de valores contida no dicionário. É semelhante à propriedade length da classe Array."
+   );
+
+   it.todo("isEmpty(): devolve true se size for igual a zero, e false caso contrário.");
+
+   it.todo("keys(): devolve um array com todas as chaves contidas no dicionário.");
+
+   it.todo("values(): devolve um array com todos os valores contidos no dicionário.");
+
+   it.todo("keyValues(): devolve um array com todos os pares de valores [chave, valor] contidos no dicionário.");
+
+   it.todo(
+      "forEach(callbackFn): itera pelos valores (value) do dicionário. A função callbackFn tem dois parâmetros: key e value. Esse método também pode ser interrompido caso a função de callback devolva false (é semelhante ao método every da classe Array)."
+   );
+});
