@@ -76,7 +76,5 @@ describe("ES6 - A classe Set", () => {
          expect(intersection).toEqual(new Set([2, 3]));
          expect(difference).toEqual(new Set([1]));
       });
-
-      it.todo("Multiconjuntos ou bags");
    });
 });
