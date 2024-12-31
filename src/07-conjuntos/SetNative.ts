@@ -7,6 +7,16 @@ const setNative = {
 
       return unionAB;
    },
+
+   intersection: (set1: Set<number>, set2: Set<number>) => {
+      const intersectionSet = new Set();
+
+      set1.forEach((value) => {
+         if (set2.has(value)) intersectionSet.add(value);
+      });
+
+      return intersectionSet;
+   },
 };
 
 export default setNative;

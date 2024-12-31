@@ -27,7 +27,21 @@ describe("ES6 - A classe Set", () => {
          expect(union).toEqual(new Set([1, 2, 3, 4]));
       });
 
-      it.todo("Simulando a operação de intersecção");
+      it("Simulando a operação de intersecção", () => {
+         const setA = new Set<number>();
+         setA.add(1);
+         setA.add(2);
+         setA.add(3);
+
+         const setB = new Set<number>();
+         setB.add(2);
+         setB.add(3);
+         setB.add(4);
+
+         const intersection = setNative.intersection(setA, setB);
+
+         expect(intersection).toEqual(new Set([2, 3]));
+      });
 
       it.todo("Simulando a operação de diferença");
 
