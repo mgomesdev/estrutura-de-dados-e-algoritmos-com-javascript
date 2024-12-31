@@ -1,5 +1,12 @@
 describe("ES6 - A classe Set", () => {
-   it.todo("Implementando a classe Set");
+   it("Implementando a classe Set", () => {
+      const set = new Set();
+
+      set.add(3);
+      set.add(7);
+
+      expect(set.size).toBe(2);
+   });
 
    it.todo("Operações com a classe set");
 
