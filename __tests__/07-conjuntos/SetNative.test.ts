@@ -59,7 +59,23 @@ describe("ES6 - A classe Set", () => {
          expect(difference).toEqual(new Set([1]));
       });
 
-      it.todo("Usando o operador de espalhamento");
+      it("Usando o operador de espalhamento", () => {
+         const setA = new Set<number>();
+         setA.add(1);
+         setA.add(2);
+         setA.add(3);
+
+         const setB = new Set<number>();
+         setB.add(2);
+         setB.add(3);
+         setB.add(4);
+
+         const intersection = new Set([...setA].filter((x) => setB.has(x)));
+         const difference = new Set([...setA].filter((x) => !setB.has(x)));
+
+         expect(intersection).toEqual(new Set([2, 3]));
+         expect(difference).toEqual(new Set([1]));
+      });
 
       it.todo("Multiconjuntos ou bags");
    });
