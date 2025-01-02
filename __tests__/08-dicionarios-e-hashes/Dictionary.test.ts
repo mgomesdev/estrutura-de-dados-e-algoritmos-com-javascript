@@ -3,6 +3,7 @@ import Dictionary from "../../src/08-dicionarios-e-hashes/Dictionary";
 describe("Dictionary", () => {
    it("Criando instancia da classe Dictionary", () => {
       const dictionary = new Dictionary();
+      expect(dictionary).toBeInstanceOf(Dictionary);
    });
 
    it.todo(
@@ -11,7 +12,14 @@ describe("Dictionary", () => {
 
    it.todo("remove(key): remove value do dicionário usando key como o parâmetro de busca.");
 
-   it.todo("hasKey(key): devolve true se key estiver presente no dicionário, e false caso contrário.");
+   describe("hasKey(key): devolve true se key estiver presente no dicionário, e false caso contrário.", () => {
+      it.todo("hasKey(key): devolve true se key estiver presente no dicionário.");
+
+      it("hasKey(key): devolve false se key não estiver presente no dicionario.", () => {
+         const dictionary = new Dictionary();
+         expect(dictionary.hasKey("")).toBeFalsy();
+      });
+   });
 
    it.todo("get(key): devolve um value específico do dicionário usando key como o parâmetro de busca.");
 
