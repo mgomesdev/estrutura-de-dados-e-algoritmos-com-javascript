@@ -17,16 +17,41 @@ describe("Dictionary", () => {
          expect(addItem).toBeTruthy();
       });
 
-      it.todo("Se key já existir, seu valor será sobrescrito com o novo valor");
+      it("Se key já existir, seu valor será sobrescrito com o novo valor", () => {
+         const dictionary = new Dictionary();
+
+         dictionary.set("user1", "Matheus");
+         dictionary.set("user1", "Silvana");
+
+         expect(dictionary.table["user1"]).toEqual({
+            key: "user1",
+            value: "Silvana",
+         });
+      });
    });
 
-   it.todo("remove(key): remove value do dicionário usando key como o parâmetro de busca.");
+   it("remove(key): remove value do dicionário usando key como o parâmetro de busca.", () => {
+      const dictionary = new Dictionary();
+
+      dictionary.set("user1", "Matheus");
+      dictionary.set("user2", "Matheus");
+      dictionary.set("user3", "Matheus");
+
+      dictionary.remove("user2");
+
+      expect(dictionary.hasKey("user2")).toBeFalsy();
+   });
 
    describe("hasKey(key): devolve true se key estiver presente no dicionário, e false caso contrário.", () => {
-      it.todo("hasKey(key): devolve true se key estiver presente no dicionário.");
+      const dictionary = new Dictionary();
+
+      dictionary.set("user", "Matheus");
+
+      it("hasKey(key): devolve true se key estiver presente no dicionário.", () => {
+         expect(dictionary.hasKey("user")).toBeTruthy();
+      });
 
       it("hasKey(key): devolve false se key não estiver presente no dicionario.", () => {
-         const dictionary = new Dictionary();
          expect(dictionary.hasKey("")).toBeFalsy();
       });
    });

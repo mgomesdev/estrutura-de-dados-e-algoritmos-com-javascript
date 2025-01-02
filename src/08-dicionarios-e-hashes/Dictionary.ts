@@ -25,11 +25,17 @@ class Dictionary<T> {
    }
 
    set(key: string, value: T) {
-      if (key !== null && value !== null) {
-         const tableKey = this.toStrFn(key);
+      if (key) {
+         this.table[this.toStrFn(key)] = new ValuePair(key, value) as T;
+         return true;
+      }
 
-         this.table[tableKey] = new ValuePair(key, value) as T;
+      return false;
+   }
 
+   remove(key: string) {
+      if (this.hasKey(key)) {
+         delete this.table[this.toStrFn(key)];
          return true;
       }
 
