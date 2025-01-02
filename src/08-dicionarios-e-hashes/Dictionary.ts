@@ -13,7 +13,7 @@ const defaultToString = (item: unknown) => {
 
 class Dictionary<T> {
    private toStrFn: typeof defaultToString;
-   public table: { [key: string]: T };
+   private table: { [key: string]: T };
 
    constructor(toStrFn = defaultToString) {
       this.toStrFn = defaultToString;
@@ -40,6 +40,11 @@ class Dictionary<T> {
       }
 
       return false;
+   }
+
+   get(key: string) {
+      if (key) return this.table[this.toStrFn(key)];
+      return undefined;
    }
 }
 

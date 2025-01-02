@@ -23,10 +23,7 @@ describe("Dictionary", () => {
          dictionary.set("user1", "Matheus");
          dictionary.set("user1", "Silvana");
 
-         expect(dictionary.table["user1"]).toEqual({
-            key: "user1",
-            value: "Silvana",
-         });
+         expect(dictionary.get("user1")).toEqual({ key: "user1", value: "Silvana" });
       });
    });
 
@@ -56,7 +53,16 @@ describe("Dictionary", () => {
       });
    });
 
-   it.todo("get(key): devolve um value específico do dicionário usando key como o parâmetro de busca.");
+   it("get(key): devolve um value específico do dicionário usando key como o parâmetro de busca.", () => {
+      const dictionary = new Dictionary();
+
+      dictionary.set("user", "Matheus");
+
+      expect(dictionary.get("user")).toEqual({
+         key: "user",
+         value: "Matheus",
+      });
+   });
 
    it.todo("clear(): remove todos os valores do dicionário.");
 
