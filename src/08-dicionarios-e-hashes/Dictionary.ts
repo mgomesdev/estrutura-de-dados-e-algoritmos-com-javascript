@@ -11,15 +11,27 @@ const defaultToString = (item: unknown) => {
 
 class Dictionary<T> {
    private toStrFn: typeof defaultToString;
-   private table: { [key: string]: T };
+   public table: { [key: string]: T };
 
    constructor(toStrFn = defaultToString) {
       this.toStrFn = defaultToString;
       this.table = {};
    }
 
-   hasKey(key: unknown) {
+   hasKey(key: string) {
       return this.table[this.toStrFn(key)] !== undefined;
+   }
+
+   set(key: string, value: T) {
+      if (key !== null && value !== null) {
+         const tableKey = this.toStrFn(key);
+
+         this.table[tableKey] = new ValuePair(key, value);
+
+         return true;
+      }
+
+      return false;
    }
 }
 

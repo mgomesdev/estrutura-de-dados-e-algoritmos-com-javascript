@@ -6,9 +6,17 @@ describe("Dictionary", () => {
       expect(dictionary).toBeInstanceOf(Dictionary);
    });
 
-   it.todo(
-      "set(key, value: adiciona um novo elemento ao dicionário. Se key já existir, seu valor será sobrescrito com o novo valor."
-   );
+   describe("set(key, value): adiciona um novo elemento ao dicionário. Se key já existir, seu valor será sobrescrito com o novo valor.", () => {
+      it("set(key, value): adiciona um novo elemento ao dicionário.", () => {
+         const dictionary = new Dictionary();
+
+         dictionary.set("nome", "Matheus");
+
+         expect(dictionary.table["nome"]).toBe("Matheus");
+      });
+
+      it.todo("Se key já existir, seu valor será sobrescrito com o novo valor");
+   });
 
    it.todo("remove(key): remove value do dicionário usando key como o parâmetro de busca.");
 
