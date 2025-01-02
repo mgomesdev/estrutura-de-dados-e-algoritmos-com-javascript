@@ -1,5 +1,9 @@
+import Dictionary from "../../src/08-dicionarios-e-hashes/Dictionary";
+
 describe("Dictionary", () => {
-   it.todo("Criando instancia da classe Dictionary");
+   it("Criando instancia da classe Dictionary", () => {
+      const dictionary = new Dictionary();
+   });
 
    it.todo(
       "set(key, value: adiciona um novo elemento ao dicionário. Se key já existir, seu valor será sobrescrito com o novo valor."
