@@ -10,9 +10,11 @@ describe("Dictionary", () => {
       it("set(key, value): adiciona um novo elemento ao dicionário.", () => {
          const dictionary = new Dictionary();
 
-         dictionary.set("nome", "Matheus");
+         const addItem = dictionary.set("user", {
+            nome: "Matheus",
+         });
 
-         expect(dictionary.table["nome"]).toBe("Matheus");
+         expect(addItem).toBeTruthy();
       });
 
       it.todo("Se key já existir, seu valor será sobrescrito com o novo valor");

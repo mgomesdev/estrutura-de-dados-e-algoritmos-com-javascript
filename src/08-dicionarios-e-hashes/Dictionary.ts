@@ -1,3 +1,5 @@
+import ValuePair from "./ValuePair";
+
 const defaultToString = (item: unknown) => {
    if (item === null) {
       return "NULL";
@@ -26,7 +28,7 @@ class Dictionary<T> {
       if (key !== null && value !== null) {
          const tableKey = this.toStrFn(key);
 
-         this.table[tableKey] = new ValuePair(key, value);
+         this.table[tableKey] = new ValuePair(key, value) as T;
 
          return true;
       }
