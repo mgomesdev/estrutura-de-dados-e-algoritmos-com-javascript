@@ -72,7 +72,13 @@ describe("Dictionary", () => {
 
    it.todo("isEmpty(): devolve true se size for igual a zero, e false caso contrário.");
 
-   it.todo("keys(): devolve um array com todas as chaves contidas no dicionário.");
+   it("keys(): devolve um array com todas as chaves contidas no dicionário.", () => {
+      const dictionary = new Dictionary();
+
+      dictionary.set("user", "Matheus");
+
+      expect(dictionary.keys()).toEqual(["user"]);
+   });
 
    it.todo("values(): devolve um array com todos os valores contidos no dicionário.");
 
