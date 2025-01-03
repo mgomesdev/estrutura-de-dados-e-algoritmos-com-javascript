@@ -59,6 +59,10 @@ class Dictionary<T> {
    size() {
       return this.keyValues().length;
    }
+
+   isEmpty() {
+      return this.size() === 0;
+   }
 }
 
 export default Dictionary;
