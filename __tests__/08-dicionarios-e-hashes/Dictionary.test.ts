@@ -136,4 +136,14 @@ describe("Dictionary", () => {
 
       expect(users).toEqual(["Matheus", "Silvana"]);
    });
+
+   it("toString(): se o dicionário estiver vazio, devolvemos uma string vazia. Caso contrário devolve o primeiro ValuePair na string resultante.", () => {
+      const dictionary1 = new Dictionary();
+      const dictionary2 = new Dictionary();
+
+      dictionary1.set("user", "Matheus");
+
+      expect(dictionary1.toString()).toBe("[#user]: Matheus,[#user]: Matheus");
+      expect(dictionary2.toString()).toBe("");
+   });
 });

@@ -67,6 +67,19 @@ class Dictionary<T> {
    clear() {
       this.table = {};
    }
+
+   toString() {
+      if (this.isEmpty()) return "";
+
+      const valuePairs = this.keyValues() as (typeof this.table)[];
+      let objString = `${valuePairs[0].toString()}`;
+
+      for (let i = 0; i < valuePairs.length; i++) {
+         objString = `${objString},${valuePairs[i].toString()}`;
+      }
+
+      return objString;
+   }
 }
 
 export default Dictionary;
