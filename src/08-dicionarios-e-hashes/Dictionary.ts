@@ -57,7 +57,7 @@ class Dictionary<T> {
    }
 
    size() {
-      return Object.keys(this.table).length;
+      return this.keyValues().length;
    }
 }
 
