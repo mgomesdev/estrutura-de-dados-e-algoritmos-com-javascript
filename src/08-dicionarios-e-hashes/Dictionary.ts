@@ -41,6 +41,10 @@ class Dictionary<T> {
    keys() {
       return this.keyValues().map((valuePair) => (valuePair as typeof this.table).key);
    }
+
+   values() {
+      return this.keyValues().map((valuePair) => (valuePair as typeof this.table).value);
+   }
 }
 
 export default Dictionary;

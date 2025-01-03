@@ -80,7 +80,13 @@ describe("Dictionary", () => {
       expect(dictionary.keys()).toEqual(["user"]);
    });
 
-   it.todo("values(): devolve um array com todos os valores contidos no dicionário.");
+   it("values(): devolve um array com todos os valores contidos no dicionário.", () => {
+      const dictionary = new Dictionary();
+
+      dictionary.set("user", "Matheus");
+
+      expect(dictionary.values()).toEqual(["Matheus"]);
+   });
 
    it("keyValues(): devolve um array com todos os pares de valores [chave, valor] contidos no dicionário.", () => {
       const dictionary = new Dictionary();
