@@ -33,6 +33,10 @@ class Dictionary<T> {
       if (key) return this.table[key];
       return undefined;
    }
+
+   keyValues() {
+      return Object.values(this.table);
+   }
 }
 
 export default Dictionary;

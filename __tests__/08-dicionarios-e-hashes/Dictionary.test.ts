@@ -76,7 +76,18 @@ describe("Dictionary", () => {
 
    it.todo("values(): devolve um array com todos os valores contidos no dicionário.");
 
-   it.todo("keyValues(): devolve um array com todos os pares de valores [chave, valor] contidos no dicionário.");
+   it("keyValues(): devolve um array com todos os pares de valores [chave, valor] contidos no dicionário.", () => {
+      const dictionary = new Dictionary();
+
+      dictionary.set("user", "Matheus");
+
+      expect(dictionary.keyValues()).toEqual([
+         {
+            key: "user",
+            value: "Matheus",
+         },
+      ]);
+   });
 
    it.todo(
       "forEach(callbackFn): itera pelos valores (value) do dicionário. A função callbackFn tem dois parâmetros: key e value. Esse método também pode ser interrompido caso a função de callback devolva false (é semelhante ao método every da classe Array)."
