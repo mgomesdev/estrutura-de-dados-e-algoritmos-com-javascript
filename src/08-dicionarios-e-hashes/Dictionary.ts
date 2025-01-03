@@ -63,6 +63,10 @@ class Dictionary<T> {
    isEmpty() {
       return this.size() === 0;
    }
+
+   clear() {
+      this.table = {};
+   }
 }
 
 export default Dictionary;
