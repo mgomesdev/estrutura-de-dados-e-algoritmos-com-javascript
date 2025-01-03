@@ -101,7 +101,22 @@ describe("Dictionary", () => {
       ]);
    });
 
-   it.todo(
-      "forEach(callbackFn): itera pelos valores (value) do dicionário. A função callbackFn tem dois parâmetros: key e value. Esse método também pode ser interrompido caso a função de callback devolva false (é semelhante ao método every da classe Array)."
-   );
+   it("forEach(callbackFn): itera pelos valores (value) do dicionário. A função callbackFn tem dois parâmetros: key e value. Esse método também pode ser interrompido caso a função de callback devolva false (é semelhante ao método every da classe Array).", () => {
+      const dictionary = new Dictionary();
+
+      dictionary.set("user", "Matheus");
+      dictionary.set("user1", "Silvana");
+
+      let users: string[] = [];
+
+      dictionary.forEach((k, v) => {
+         const searchUsers = ["Matheus", "Silvana"];
+
+         if (searchUsers.includes(v as string)) {
+            users.push(v as string);
+         }
+      });
+
+      expect(users).toEqual(["Matheus", "Silvana"]);
+   });
 });

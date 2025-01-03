@@ -45,6 +45,16 @@ class Dictionary<T> {
    values() {
       return this.keyValues().map((valuePair) => (valuePair as typeof this.table).value);
    }
+
+   forEach(callbackFn: (k: string, v: unknown) => unknown) {
+      const valuePairs = this.keyValues() as (typeof this.table)[];
+
+      for (let i = 0; i < valuePairs.length; i++) {
+         const result = callbackFn(valuePairs[i].key as string, valuePairs[i].value);
+
+         if (result === false) break;
+      }
+   }
 }
 
 export default Dictionary;
