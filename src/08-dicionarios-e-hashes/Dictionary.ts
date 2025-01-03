@@ -55,6 +55,10 @@ class Dictionary<T> {
          if (result === false) break;
       }
    }
+
+   size() {
+      return Object.keys(this.table).length;
+   }
 }
 
 export default Dictionary;

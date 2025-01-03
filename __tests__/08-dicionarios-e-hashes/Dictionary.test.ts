@@ -66,9 +66,15 @@ describe("Dictionary", () => {
 
    it.todo("clear(): remove todos os valores do dicionário.");
 
-   it.todo(
-      "size(): devolve a quantidade de valores contida no dicionário. É semelhante à propriedade length da classe Array."
-   );
+   it("size(): devolve a quantidade de valores contida no dicionário. É semelhante à propriedade length da classe Array.", () => {
+      const dictionary = new Dictionary();
+
+      dictionary.set("user1", "Matheus");
+      dictionary.set("user2", "Matheus");
+      dictionary.set("user3", "Matheus");
+
+      expect(dictionary.size()).toBe(3);
+   });
 
    it.todo("isEmpty(): devolve true se size for igual a zero, e false caso contrário.");
 
