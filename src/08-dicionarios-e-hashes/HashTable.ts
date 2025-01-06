@@ -1,7 +1,7 @@
 import ValuePair from "./ValuePair";
 
 class HashTable<T> {
-   public table: { [key: string]: T | unknown };
+   private table: { [key: string]: T | unknown };
 
    constructor() {
       this.table = {};
@@ -37,6 +37,10 @@ class HashTable<T> {
    get(key: T) {
       const valuePair = this.table[this.hashCode(key)] as typeof this.table;
       return valuePair === undefined ? undefined : valuePair.value;
+   }
+
+   getTable() {
+      return this.table;
    }
 
    remove(key: T) {
