@@ -59,7 +59,6 @@ class HashTable<T> {
       if (Object.values(this.table).length === 0) return "";
 
       const keys = Object.keys(this.table);
-
       let objString = `${keys[0]} => ${(this.table[keys[0]] as object).toString()}`;
 
       for (let i = 1; i < keys.length; i++) {
