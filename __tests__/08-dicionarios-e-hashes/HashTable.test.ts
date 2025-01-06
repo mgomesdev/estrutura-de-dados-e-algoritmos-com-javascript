@@ -39,4 +39,14 @@ describe("HashTable", () => {
 
       expect(hashTable.get("nome")).toBe("matheus");
    });
+
+   it("toString(): se o dicionário estiver vazio, devolvemos uma string vazia. Caso contrário devolve o primeiro ValuePair na string resultante.", () => {
+      const hashTable1 = new HashTable();
+      const hashTable2 = new HashTable();
+
+      hashTable1.put("nome", "matheus");
+
+      expect(hashTable1.toString()).toBe("24 => [#nome]: matheus");
+      expect(hashTable2.toString()).toBe("");
+   });
 });
