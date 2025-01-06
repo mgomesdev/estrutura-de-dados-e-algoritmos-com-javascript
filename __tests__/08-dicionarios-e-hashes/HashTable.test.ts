@@ -21,7 +21,16 @@ describe("HashTable", () => {
       expect(hashTable.table).toEqual({ 24: { key: "nome", value: "matheus" } });
    });
 
-   it.todo("remove(key): remove o value da tabela hash usando key.");
+   it("remove(key): remove o value da tabela hash usando key.", () => {
+      const hashTable = new HashTable();
+
+      hashTable.put("nome1", "matheus");
+      hashTable.put("nome2", "silvana");
+
+      hashTable.remove("nome1");
+
+      expect(hashTable.table).toEqual({ 0: { key: "nome2", value: "silvana" } });
+   });
 
    it("get(key): devolve um value específico encontrado com key.", () => {
       const hashTable = new HashTable();

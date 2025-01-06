@@ -38,6 +38,18 @@ class HashTable<T> {
       const valuePair = this.table[this.hashCode(key)] as typeof this.table;
       return valuePair === undefined ? undefined : valuePair.value;
    }
+
+   remove(key: T) {
+      const hash = this.hashCode(key);
+      const valuePair = this.table[hash];
+
+      if (valuePair !== undefined) {
+         delete this.table[hash];
+         return true;
+      }
+
+      return false;
+   }
 }
 
 export default HashTable;
