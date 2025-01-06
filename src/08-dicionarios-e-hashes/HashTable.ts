@@ -33,6 +33,11 @@ class HashTable<T> {
 
       return false;
    }
+
+   get(key: T) {
+      const valuePair = this.table[this.hashCode(key)] as typeof this.table;
+      return valuePair === undefined ? undefined : valuePair.value;
+   }
 }
 
 export default HashTable;

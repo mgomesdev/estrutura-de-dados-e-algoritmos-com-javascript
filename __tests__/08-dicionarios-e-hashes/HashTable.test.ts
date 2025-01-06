@@ -23,5 +23,11 @@ describe("HashTable", () => {
 
    it.todo("remove(key): remove o value da tabela hash usando key.");
 
-   it.todo("get(key): devolve um value específico encontrado com key.");
+   it("get(key): devolve um value específico encontrado com key.", () => {
+      const hashTable = new HashTable();
+
+      hashTable.put("nome", "matheus");
+
+      expect(hashTable.get("nome")).toBe("matheus");
+   });
 });
