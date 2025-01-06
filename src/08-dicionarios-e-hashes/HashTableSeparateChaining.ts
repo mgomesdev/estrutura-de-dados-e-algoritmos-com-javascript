@@ -1,4 +1,5 @@
 import LinkedList from "../06-listas-ligadas/LinkedList";
+import Node from "../06-listas-ligadas/Node";
 import ValuePair from "./ValuePair";
 
 class HashTableSeparateChaining<T> {
@@ -36,6 +37,23 @@ class HashTableSeparateChaining<T> {
       }
 
       return false;
+   }
+
+   get(key: string) {
+      const position = this.hashCode(key as T);
+      const linkedList = this.table[position] as LinkedList;
+
+      if (linkedList !== undefined && !linkedList.isEmpty()) {
+         let current = linkedList.getHead() as Node<ValuePair<T>>;
+
+         while (current !== undefined) {
+            if (current.element.key === key) current.element.value;
+         }
+
+         current = (current as Node<ValuePair<T>>).next as Node<ValuePair<T>>;
+      }
+
+      return undefined;
    }
 }
 

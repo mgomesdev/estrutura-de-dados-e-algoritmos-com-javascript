@@ -15,7 +15,15 @@ describe("HashTableSeparateChaining", () => {
       expect(add).toBeTruthy();
    });
 
-   it.todo("get(key): obtem um valor dava uma chave.");
+   it("get(key): obtem um valor dava uma chave.", () => {
+      const hashTableSeparateChaining = new HashTableSeparateChaining();
+
+      hashTableSeparateChaining.put("nome1", "matheus");
+
+      throw "O teste entrou em loop, rever os erros, provavelmente é nos tipos do Node<T>";
+
+      expect(hashTableSeparateChaining.get("nome1")).toBe("matheus");
+   });
 
    it.todo("remove(key): remove um elemento.");
 });
