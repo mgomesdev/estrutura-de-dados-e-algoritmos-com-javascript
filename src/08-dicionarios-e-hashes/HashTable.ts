@@ -1,5 +1,7 @@
+import ValuePair from "./ValuePair";
+
 class HashTable<T> {
-   private table: { [key: string]: T };
+   public table: { [key: string]: T | unknown };
 
    constructor() {
       this.table = {};
@@ -20,6 +22,16 @@ class HashTable<T> {
 
    hashCode(key: T) {
       return this.loseloseHashCode(key);
+   }
+
+   put(key: T, value: T) {
+      if (key !== null && value !== null) {
+         const position = this.hashCode(key);
+         this.table[position] = new ValuePair(key as string, value);
+         return true;
+      }
+
+      return false;
    }
 }
 

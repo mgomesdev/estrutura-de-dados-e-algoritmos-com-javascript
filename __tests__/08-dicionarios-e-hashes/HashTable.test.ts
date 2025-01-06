@@ -13,7 +13,13 @@ describe("HashTable", () => {
       expect(hashTable.hashCode("age")).toBe(5);
    });
 
-   it.todo("put(key,value): adicionar um novo item á tabela hash (ou pode atualizá-la também).");
+   it("put(key,value): adicionar um novo item á tabela hash (ou pode atualizá-la também).", () => {
+      const hashTable = new HashTable();
+
+      hashTable.put("nome", "matheus");
+
+      expect(hashTable.table).toEqual({ 24: { key: "nome", value: "matheus" } });
+   });
 
    it.todo("remove(key): remove o value da tabela hash usando key.");
 
