@@ -89,7 +89,30 @@ class HashTableLinearPooling<T> {
       return false;
    }
 
-   verifyRemoveSideEffect(key: String, value: T | number) {}
+   /*
+    * TODO: criar os testes deste método.
+    *
+    * verifyRemoveSideEffect(key, removedPosition):
+    *   - verifica se há elementos com o mesmo hash em uma position diferente
+    *   - e se a remoção tem algum efeito colateral.
+    *
+    */
+   verifyRemoveSideEffect(key: String, removedPosition: number) {
+      const hash = this.hashCode(key as T);
+      let index = removedPosition + 1;
+
+      while (this.table[index] !== undefined) {
+         const posHash = this.hashCode((this.table[index] as ValuePair<T>).key as T);
+
+         if (posHash <= hash || posHash <= removedPosition) {
+            this.table[removedPosition] = this.table[index];
+            delete this.table[index];
+            removedPosition = index;
+         }
+
+         index++;
+      }
+   }
 }
 
 export default HashTableLinearPooling;
