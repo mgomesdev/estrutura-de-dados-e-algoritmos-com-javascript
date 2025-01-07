@@ -47,10 +47,10 @@ class HashTableSeparateChaining<T> {
          let current = linkedList.getHead() as Node<ValuePair<T>>;
 
          while (current !== undefined) {
-            if (current.element.key === key) current.element.value;
-         }
+            if (current.element.key === key) return current.element.value;
 
-         current = (current as Node<ValuePair<T>>).next as Node<ValuePair<T>>;
+            current = (current as Node<ValuePair<T>>).next as Node<ValuePair<T>>;
+         }
       }
 
       return undefined;
