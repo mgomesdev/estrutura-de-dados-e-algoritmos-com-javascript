@@ -22,5 +22,13 @@ describe("HashTableLinearPooling", () => {
       expect(hashTableLinearPooling.get("nome1")).toBe("matheus");
    });
 
-   it.todo("remove(key): remove um elemento.");
+   it("remove(key): remove um elemento.", () => {
+      const hashTableLinearPooling = new HashTableLinearPooling();
+
+      hashTableLinearPooling.put("nome1", "matheus");
+
+      const remove = hashTableLinearPooling.remove("nome1");
+
+      expect(remove).toBeTruthy();
+   });
 });

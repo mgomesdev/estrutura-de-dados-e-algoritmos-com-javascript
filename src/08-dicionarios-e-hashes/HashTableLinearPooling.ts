@@ -46,6 +46,7 @@ class HashTableLinearPooling<T> {
       return false;
    }
 
+   // TODO: extender e aplicar polimorfismo neste metodo.
    get(key: string) {
       const position = this.hashCode(key as T);
 
@@ -62,6 +63,33 @@ class HashTableLinearPooling<T> {
 
       return undefined;
    }
+
+   // TODO: extender e aplicar polimorfismo neste metodo.
+   remove(key: string) {
+      const position = this.hashCode(key as T);
+
+      if (this.table[position] !== undefined) {
+         if ((this.table[position] as ValuePair<T>).key === key) {
+            delete this.table[position];
+            this.verifyRemoveSideEffect(key, position);
+            return true;
+         }
+
+         let index = position + 1;
+
+         while (this.table[index] !== undefined && (this.table[index] as ValuePair<T>).key !== undefined) index++;
+
+         if (this.table[index] !== null && (this.table[index] as ValuePair<T>).key === key) {
+            delete this.table[index];
+            this.verifyRemoveSideEffect(key, index);
+            return true;
+         }
+      }
+
+      return false;
+   }
+
+   verifyRemoveSideEffect(key: String, value: T | number) {}
 }
 
 export default HashTableLinearPooling;
