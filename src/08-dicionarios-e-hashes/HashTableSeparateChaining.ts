@@ -9,6 +9,7 @@ class HashTableSeparateChaining<T> {
       this.table = {};
    }
 
+   // TODO: eliminar este metodo através de herança.
    loseloseHashCode(key: T) {
       if (typeof key === "number") return key;
 
@@ -22,10 +23,12 @@ class HashTableSeparateChaining<T> {
       return hash % 37;
    }
 
+   // TODO: eliminar este metodo através de herança.
    hashCode(key: T) {
       return this.loseloseHashCode(key);
    }
 
+   // TODO: extender e aplicar polimorfismo neste metodo.
    put(key: T, value: T) {
       if (key !== null && value !== null) {
          const position = this.hashCode(key as T);
@@ -40,6 +43,7 @@ class HashTableSeparateChaining<T> {
       return false;
    }
 
+   // TODO: extender e aplicar polimorfismo neste metodo.
    get(key: string) {
       const position = this.hashCode(key as T);
       const linkedList = this.table[position] as LinkedList;
@@ -57,6 +61,7 @@ class HashTableSeparateChaining<T> {
       return undefined;
    }
 
+   // TODO: extender e aplicar polimorfismo neste metodo.
    remove(key: string) {
       const position = this.hashCode(key as T);
       const linkedList = this.table[position] as LinkedList;
