@@ -14,7 +14,13 @@ describe("HashTableLinearPooling", () => {
       expect(add).toBeTruthy();
    });
 
-   it.todo("get(key): obtem um valor dava uma chave.");
+   it("get(key): obtem um valor dava uma chave.", () => {
+      const hashTableLinearPooling = new HashTableLinearPooling();
+
+      hashTableLinearPooling.put("nome1", "matheus");
+
+      expect(hashTableLinearPooling.get("nome1")).toBe("matheus");
+   });
 
    it.todo("remove(key): remove um elemento.");
 });

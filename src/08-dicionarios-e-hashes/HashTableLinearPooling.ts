@@ -45,6 +45,23 @@ class HashTableLinearPooling<T> {
       }
       return false;
    }
+
+   get(key: string) {
+      const position = this.hashCode(key as T);
+
+      if (this.table[position] !== undefined) {
+         if ((this.table[position] as ValuePair<T>).key === key) return (this.table[position] as ValuePair<T>).value;
+
+         let index = position + 1;
+
+         while (this.table[position] !== undefined && (this.table[index] as ValuePair<T>).key !== key) index++;
+
+         if (this.table[index] !== undefined && (this.table[index] as ValuePair<T>).key === key)
+            return (this.table[position] as ValuePair<T>).value;
+      }
+
+      return undefined;
+   }
 }
 
 export default HashTableLinearPooling;
