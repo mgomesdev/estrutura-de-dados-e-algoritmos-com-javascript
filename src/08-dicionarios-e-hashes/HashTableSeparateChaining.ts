@@ -55,6 +55,29 @@ class HashTableSeparateChaining<T> {
 
       return undefined;
    }
+
+   remove(key: string) {
+      const position = this.hashCode(key as T);
+      const linkedList = this.table[position] as LinkedList;
+
+      if (linkedList !== undefined && !linkedList.isEmpty()) {
+         let current = linkedList.getHead() as Node<ValuePair<T>>;
+
+         while (current !== undefined) {
+            if (current.element.key === key) {
+               linkedList.remove(current.element);
+
+               if (linkedList.isEmpty()) delete this.table[position];
+
+               return true;
+            }
+
+            current = (current as Node<ValuePair<T>>).next as Node<ValuePair<T>>;
+         }
+
+         return false;
+      }
+   }
 }
 
 export default HashTableSeparateChaining;

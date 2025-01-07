@@ -23,5 +23,14 @@ describe("HashTableSeparateChaining", () => {
       expect(hashTableSeparateChaining.get("nome1")).toBe("matheus");
    });
 
-   it.todo("remove(key): remove um elemento.");
+   it("remove(key): remove um elemento.", () => {
+      const hashTableSeparateChaining = new HashTableSeparateChaining();
+
+      hashTableSeparateChaining.put("nome1", "matheus");
+      hashTableSeparateChaining.put("nome2", "silvana");
+
+      const remove = hashTableSeparateChaining.remove("nome1");
+
+      expect(remove).toBeTruthy();
+   });
 });

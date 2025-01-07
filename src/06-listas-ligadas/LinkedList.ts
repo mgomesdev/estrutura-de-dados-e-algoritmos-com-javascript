@@ -52,7 +52,7 @@ class LinkedList {
       return undefined;
    }
 
-   remove(element: number) {
+   remove(element: unknown) {
       const index = this.indexOf(element);
       return this.removeAt(index);
    }
@@ -91,7 +91,7 @@ class LinkedList {
       }
    }
 
-   indexOf(element: number) {
+   indexOf(element: unknown) {
       let current = this._head;
 
       for (let i = 0; i < this._count && current !== null; i++) {
