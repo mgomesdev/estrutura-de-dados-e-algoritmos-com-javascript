@@ -32,7 +32,8 @@ class HashTableSeparateChaining<T> {
 
          if (this.table[position] === undefined) (this.table[position] as object) = new LinkedList();
 
-         (this.table[position] as any).push(new ValuePair(key as string, value));
+         (this.table[position] as LinkedList).push(new ValuePair(key as string, value));
+
          return true;
       }
 
