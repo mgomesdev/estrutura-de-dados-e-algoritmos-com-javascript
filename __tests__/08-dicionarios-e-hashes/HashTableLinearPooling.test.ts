@@ -31,17 +31,4 @@ describe("HashTableLinearPooling", () => {
       const hashTableLinearPooling = new HashTableLinearPooling();
       expect(hashTableLinearPooling.djb2HashCode("matheus")).toBe(532);
    });
-
-   it.skip("Parei aqui: Criando funções melhores de hash.", () => {
-      throw [
-         "Proximos Passos:",
-         "- Finalizar o capitulo.",
-         "- Fazer os exemplos com Map, Set Weak etc…",
-         "- Remover duplicação dos metodos através de herança.",
-         "- Sobrescrever os métodos através do polimorfismo.",
-         "- Verificar cobertura de testes.",
-         "- Utilizar o chatgpt para criar o teste do método SideEffect.",
-         "- Organizar proximos passos -> Recursão.",
-      ];
-   });
 });

@@ -12,3 +12,4 @@ Escreva um código JavaScript complexo e eficaz usando a mais recente ECMASCRIPT
 -  [Cap. 6 - Listas Ligadas](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/06-listas-ligadas)
 -  [Cap. 7 - Conjuntos](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/07-conjuntos)
 -  [Cap. 8 - Dicionários e Hashes](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/08-dicionarios-e-hashes)
+-  [Cap. 9 - Recursão](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/09-recursao)
