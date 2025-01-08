@@ -7,20 +7,6 @@ class HashTableLinearPooling<T> {
       this.table = {};
    }
 
-   // TODO: eliminar este metodo através de herança.
-   loseloseHashCode(key: T) {
-      if (typeof key === "number") return key;
-
-      const tableKey = key as string;
-      let hash = 0;
-
-      for (let i = 0; i < tableKey.length; i++) {
-         hash += tableKey.charCodeAt(i);
-      }
-
-      return hash % 37;
-   }
-
    djb2HashCode(key: T) {
       const tableKey = String(key);
       let hash = 5381;
@@ -34,7 +20,7 @@ class HashTableLinearPooling<T> {
 
    // TODO: eliminar este metodo através de herança.
    hashCode(key: T) {
-      return this.loseloseHashCode(key);
+      return this.djb2HashCode(key);
    }
 
    // TODO: extender e aplicar polimorfismo neste metodo.
