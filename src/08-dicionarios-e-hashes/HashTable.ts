@@ -1,7 +1,7 @@
 import ValuePair from "./ValuePair";
 
 class HashTable<T> {
-   private table: { [key: string]: T | unknown };
+   protected table: { [key: string]: T | unknown };
 
    constructor() {
       this.table = {};

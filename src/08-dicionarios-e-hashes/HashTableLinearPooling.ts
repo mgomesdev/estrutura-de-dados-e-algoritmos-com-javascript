@@ -1,10 +1,9 @@
+import HashTable from "./HashTable";
 import ValuePair from "./ValuePair";
 
-class HashTableLinearPooling<T> {
-   private table: { [key: string]: T };
-
+class HashTableLinearPooling<T> extends HashTable<T> {
    constructor() {
-      this.table = {};
+      super();
    }
 
    djb2HashCode(key: T) {
@@ -18,24 +17,22 @@ class HashTableLinearPooling<T> {
       return hash % 1013;
    }
 
-   // TODO: eliminar este metodo através de herança.
    hashCode(key: T) {
       return this.djb2HashCode(key);
    }
 
-   // TODO: extender e aplicar polimorfismo neste metodo.
-   put(key: string, value: T) {
+   override put(key: T, value: T) {
       if (key !== undefined && value !== undefined) {
          const position = this.hashCode(key as T);
 
          if (this.table[position] === undefined) {
-            (this.table[position] as object) = new ValuePair(key, value);
+            this.table[position] = new ValuePair(String(key), value);
          } else {
             let index = position + 1;
 
             while (this.table[index] !== undefined) index++;
 
-            (this.table[index] as object) = new ValuePair(key, value);
+            (this.table[index] as object) = new ValuePair(String(key), value);
          }
 
          return true;
@@ -43,8 +40,7 @@ class HashTableLinearPooling<T> {
       return false;
    }
 
-   // TODO: extender e aplicar polimorfismo neste metodo.
-   get(key: string) {
+   override get(key: T) {
       const position = this.hashCode(key as T);
 
       if (this.table[position] !== undefined) {
@@ -61,8 +57,7 @@ class HashTableLinearPooling<T> {
       return undefined;
    }
 
-   // TODO: extender e aplicar polimorfismo neste metodo.
-   remove(key: string) {
+   override remove(key: T) {
       const position = this.hashCode(key as T);
 
       if (this.table[position] !== undefined) {
@@ -94,7 +89,7 @@ class HashTableLinearPooling<T> {
     *   - e se a remoção tem algum efeito colateral.
     *
     */
-   verifyRemoveSideEffect(key: String, removedPosition: number) {
+   verifyRemoveSideEffect(key: T, removedPosition: number) {
       const hash = this.hashCode(key as T);
       let index = removedPosition + 1;
 
