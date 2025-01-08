@@ -27,7 +27,12 @@ describe("HashTableLinearPooling", () => {
       "verifyRemoveSideEffect(key, removedPosition): verifica se há elementos com o mesmo hash em uma position diferente e se a remoção tem algum efeito colateral."
    );
 
-   it("Parei aqui: Criando funções melhores de hash.", () => {
+   it("djb2HashCode(key)", () => {
+      const hashTableLinearPooling = new HashTableLinearPooling();
+      expect(hashTableLinearPooling.djb2HashCode("matheus")).toBe(532);
+   });
+
+   it.skip("Parei aqui: Criando funções melhores de hash.", () => {
       throw [
          "Proximos Passos:",
          "- Finalizar o capitulo.",

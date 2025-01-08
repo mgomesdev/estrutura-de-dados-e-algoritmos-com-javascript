@@ -21,6 +21,17 @@ class HashTableLinearPooling<T> {
       return hash % 37;
    }
 
+   djb2HashCode(key: T) {
+      const tableKey = String(key);
+      let hash = 5381;
+
+      for (let i = 0; i < tableKey.length; i++) {
+         hash = hash * 33 + tableKey.charCodeAt(i);
+      }
+
+      return hash % 1013;
+   }
+
    // TODO: eliminar este metodo através de herança.
    hashCode(key: T) {
       return this.loseloseHashCode(key);
