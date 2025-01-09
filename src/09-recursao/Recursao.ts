@@ -56,6 +56,25 @@ const Recursao = {
 
       return fibN;
    },
+
+   fibonacciRecursive: (n: number): number => {
+      if (n < 1) return 0;
+      if (n <= 2) return 1;
+      return Recursao.fibonacciRecursive(n - 1) + Recursao.fibonacciRecursive(n - 2);
+   },
+
+   fibonacciMemoization: (n: number): number => {
+      const memo: number[] = [0, 1];
+
+      const fibonacci = (n: number): number => {
+         if (memo[n] !== undefined) return memo[n];
+
+         memo[n] = fibonacci(n - 1) + fibonacci(n - 2);
+         return memo[n];
+      };
+
+      return fibonacci(n);
+   },
 };
 
 export default Recursao;

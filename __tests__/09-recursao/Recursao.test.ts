@@ -51,8 +51,14 @@ describe("Recursao", () => {
          expect(fibonacciIterative).toBe(13);
       });
 
-      it.todo("Fibonacci Recursivo");
+      it("Fibonacci Recursivo", () => {
+         const fibonacciRecursive = Recursao.fibonacciRecursive(7);
+         expect(fibonacciRecursive).toBe(13);
+      });
 
-      it.todo("Fibonacci com memoização");
+      it("Fibonacci com memoização", () => {
+         const fibonacciMemoization = Recursao.fibonacciMemoization(7);
+         expect(fibonacciMemoization).toBe(13);
+      });
    });
 });
