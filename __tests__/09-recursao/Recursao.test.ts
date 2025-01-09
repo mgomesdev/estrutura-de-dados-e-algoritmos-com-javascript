@@ -46,7 +46,10 @@ describe("Recursao", () => {
    });
 
    describe("Sequencia de Fibonacci", () => {
-      it.todo("Fibonacci Iterativo");
+      it("Fibonacci Iterativo", () => {
+         const fibonacciIterative = Recursao.fibonacciIterative(7);
+         expect(fibonacciIterative).toBe(13);
+      });
 
       it.todo("Fibonacci Recursivo");
 
