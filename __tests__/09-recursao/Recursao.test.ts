@@ -28,7 +28,10 @@ describe("Recursao", () => {
          expect(factorialIterative).toBe(5040);
       });
 
-      it.todo("Fatorial recursivo");
+      it("Fatorial recursivo", () => {
+         const factorialRecursive = Recursao.factorialRecursive(5);
+         expect(factorialRecursive).toBe(120);
+      });
    });
 
    it.todo("Pilha de chamadas");

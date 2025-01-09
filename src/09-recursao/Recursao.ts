@@ -18,6 +18,12 @@ const Recursao = {
 
       return total;
    },
+
+   factorialRecursive: (n: number): number => {
+      if (n === 1 || n === 0) return 1;
+
+      return n * Recursao.factorialRecursive(n - 1);
+   },
 };
 
 export default Recursao;
