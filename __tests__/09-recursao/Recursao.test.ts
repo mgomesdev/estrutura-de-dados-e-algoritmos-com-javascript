@@ -34,9 +34,12 @@ describe("Recursao", () => {
       });
    });
 
-   it.todo("Pilha de chamadas");
-
-   it.todo("Limitação do tamanho da pilha de chamadas em JavaScript");
+   describe("Pilha de chamadas", () => {
+      it("Limitação do tamanho da pilha de chamadas em JavaScript -> erro de stack overflow (erro de transbordamento de pilha).", () => {
+         const stackOverflow = Recursao.stackOverflowError();
+         expect(stackOverflow).toBe("i = 13706: RangeError: Maximum call stack size exceeded");
+      });
+   });
 
    describe("Sequencia de Fibonacci", () => {
       it.todo("Fibonacci Iterativo");

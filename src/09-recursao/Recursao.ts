@@ -24,6 +24,21 @@ const Recursao = {
 
       return n * Recursao.factorialRecursive(n - 1);
    },
+
+   stackOverflowError: () => {
+      let i = 0;
+
+      function recursiveFn() {
+         i++;
+         recursiveFn();
+      }
+
+      try {
+         recursiveFn();
+      } catch (ex) {
+         return `i = ${i}: ${ex}`;
+      }
+   },
 };
 
 export default Recursao;
