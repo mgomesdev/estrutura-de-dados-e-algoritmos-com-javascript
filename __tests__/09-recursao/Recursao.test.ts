@@ -24,8 +24,8 @@ describe("Recursao", () => {
 
    describe("Calculando o fatorial de um numero", () => {
       it("Fatorial iterativo", () => {
-         const factorialIterative = Recursao.factorialIterative(5);
-         expect(factorialIterative).toBe(120);
+         const factorialIterative = Recursao.factorialIterative(7);
+         expect(factorialIterative).toBe(5040);
       });
 
       it.todo("Fatorial recursivo");
