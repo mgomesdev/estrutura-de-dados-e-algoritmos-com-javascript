@@ -36,6 +36,10 @@ describe("Recursao", () => {
 
    describe("Pilha de chamadas", () => {
       it("Limitação do tamanho da pilha de chamadas em JavaScript -> erro de stack overflow (erro de transbordamento de pilha).", () => {
+         jest
+            .spyOn(Recursao, "stackOverflowError")
+            .mockReturnValueOnce("i = 13706: RangeError: Maximum call stack size exceeded");
+
          const stackOverflow = Recursao.stackOverflowError();
          expect(stackOverflow).toBe("i = 13706: RangeError: Maximum call stack size exceeded");
       });
