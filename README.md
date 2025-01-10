@@ -2,12 +2,12 @@
 
 ![!Capa do livro: Estrutura de Dados e Algoritmos com JavaScript - Loiane Groner!](/readme/estrutura-de-dados-e-algoritmos-com-javascript.jpg "Estrutura de Dados e Algoritmos com JavaScript - Loiane Groner")
 
-|                      |                   |
-| -------------------- | ----------------- |
-| **Status**           | Pausado           |
-| **Progresso**        | 57%               |
-| **Páginas**          | 241/420           |
-| **Próximo Capítulo** | Cap. 10 - Árvores |
+| Título           | Descrição         |
+| ---------------- | ----------------- |
+| Status           | Pausado           |
+| Progresso        | 57%               |
+| Páginas          | 241/420           |
+| Próximo Capítulo | Cap. 10 - Árvores |
 
 ---
 
