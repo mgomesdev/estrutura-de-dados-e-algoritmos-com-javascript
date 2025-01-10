@@ -61,8 +61,4 @@ describe("Recursao", () => {
          expect(fibonacciMemoization).toBe(13);
       });
    });
-
-   it.skip("Proximos passos", () => {
-      throw ["Melhorar o readme com a capa do livro, e informações", "FInalizar, revisar e virar a chavinha."];
-   });
 });
