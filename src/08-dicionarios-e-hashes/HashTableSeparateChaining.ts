@@ -1,39 +1,18 @@
 import LinkedList from "../06-listas-ligadas/LinkedList";
 import Node from "../06-listas-ligadas/Node";
+import HashTable from "./HashTable";
 import ValuePair from "./ValuePair";
 
-class HashTableSeparateChaining<T> {
-   private table: { [key: string]: T };
-
+class HashTableSeparateChaining<T> extends HashTable<T> {
    constructor() {
-      this.table = {};
+      super();
    }
 
-   // TODO: eliminar este metodo através de herança.
-   loseloseHashCode(key: T) {
-      if (typeof key === "number") return key;
-
-      const tableKey = key as string;
-      let hash = 0;
-
-      for (let i = 0; i < tableKey.length; i++) {
-         hash += tableKey.charCodeAt(i);
-      }
-
-      return hash % 37;
-   }
-
-   // TODO: eliminar este metodo através de herança.
-   hashCode(key: T) {
-      return this.loseloseHashCode(key);
-   }
-
-   // TODO: extender e aplicar polimorfismo neste metodo.
-   put(key: T, value: T) {
+   override put(key: T, value: T) {
       if (key !== null && value !== null) {
          const position = this.hashCode(key as T);
 
-         if (this.table[position] === undefined) (this.table[position] as object) = new LinkedList();
+         if (this.table[position] === undefined) this.table[position] = new LinkedList();
 
          (this.table[position] as LinkedList).push(new ValuePair(key as string, value));
 
@@ -43,8 +22,7 @@ class HashTableSeparateChaining<T> {
       return false;
    }
 
-   // TODO: extender e aplicar polimorfismo neste metodo.
-   get(key: string) {
+   override get(key: string | T) {
       const position = this.hashCode(key as T);
       const linkedList = this.table[position] as LinkedList;
 
@@ -61,8 +39,7 @@ class HashTableSeparateChaining<T> {
       return undefined;
    }
 
-   // TODO: extender e aplicar polimorfismo neste metodo.
-   remove(key: string) {
+   override remove(key: string | T) {
       const position = this.hashCode(key as T);
       const linkedList = this.table[position] as LinkedList;
 

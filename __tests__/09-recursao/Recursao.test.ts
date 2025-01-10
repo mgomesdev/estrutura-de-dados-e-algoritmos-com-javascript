@@ -62,12 +62,11 @@ describe("Recursao", () => {
       });
    });
 
-   it("Proximos passos", () => {
+   it.skip("Proximos passos", () => {
       throw [
-         "Finalizar capitulo",
-         "Organizar notion em ordem alfabetica",
          "Melhorar o readme com a capa do livro, e informações",
          "Atualizar o log de livros lidos para 'pausado', porque irei pausar este livro por nao fazer mais sentido no momento.",
+         "Eliminar duplicacao HashTableSeparateChaining.ts",
          "Atualizar lembrete do notion descrevendo onde parei e porque parei, para consultas futuras quando continuar a ler.",
          "FInalizar, revisar e virar a chavinha.",
       ];

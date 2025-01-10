@@ -43,7 +43,7 @@ class HashTable<T> {
       return this.table;
    }
 
-   remove(key: T) {
+   remove(key: T): boolean | undefined {
       const hash = this.hashCode(key);
       const valuePair = this.table[hash];
 
