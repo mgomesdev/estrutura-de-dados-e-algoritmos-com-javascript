@@ -1,7 +1,7 @@
 class Deque {
    private count: number;
    private lowestCount: number;
-   public items: { [key: number | string]: number | string };
+   private items: { [key: number | string]: number | string };
 
    constructor() {
       this.count = 0;

@@ -1,8 +1,17 @@
-## Leitura do livro: Estrutura de Dados e Algorítmos com JavaScript - Loiane Groner
+## Estrutura de dados e algorítmos com JavaScript 2ª Edição - Loiane Groner
 
-Escreva um código JavaScript complexo e eficaz usando a mais recente ECMASCRIPT.
+![!Capa do livro: Estrutura de Dados e Algoritmos com JavaScript - Loiane Groner!](/readme/estrutura-de-dados-e-algoritmos-com-javascript.jpg "Estrutura de Dados e Algoritmos com JavaScript - Loiane Groner")
 
-> Utilizei TDD para fazer os exercícios e testar os exemplos do livro.
+|                      |                   |
+| -------------------- | ----------------- |
+| **Status**           | Pausado           |
+| **Progresso**        | 57%               |
+| **Páginas**          | 241/420           |
+| **Próximo Capítulo** | Cap. 10 - Árvores |
+
+---
+
+### Concluído
 
 -  [Cap. 1 - JavaScript - uma visão geral rápida](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/01-javascript-uma-visao-geral-rapida)
 -  [Cap. 2 - Visão Geral ECMAScript](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/02-visao-geral-ecmascript)
@@ -13,3 +22,12 @@ Escreva um código JavaScript complexo e eficaz usando a mais recente ECMASCRIPT
 -  [Cap. 7 - Conjuntos](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/07-conjuntos)
 -  [Cap. 8 - Dicionários e Hashes](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/08-dicionarios-e-hashes)
 -  [Cap. 9 - Recursão](https://github.com/mgomesdev/estrutura-de-dados-e-algoritmos-com-javascript/tree/main/__tests__/09-recursao)
+
+### Pendente
+
+-  Cap. 10 - Árvores
+-  Cap. 11 - Heap binário e heap sort
+-  Cap. 12 - Grafos
+-  Cap. 13 - Algoritmos de ordenação e de busca
+-  Cap. 14 - Designs de algoritmos e técnicas
+-  Cap. 15 - Complexidade de algoritmos
